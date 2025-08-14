@@ -4,7 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+// For GitHub Pages, we can pass base via CLI in CI, but set a sensible default
 export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/degen-labs/' : '/',
   server: {
     host: "::",
     port: 8080,
