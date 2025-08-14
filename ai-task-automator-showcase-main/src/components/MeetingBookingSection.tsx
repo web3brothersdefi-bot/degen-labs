@@ -26,18 +26,23 @@ const MeetingBookingSection: React.FC = () => {
       document.body.appendChild(script);
     };
 
+    // Start loading Calendly script immediately after mount to avoid long delays later
+    loadCalendly();
+
+    // Only use IntersectionObserver to delay widget initialization until near viewport
     if ('IntersectionObserver' in window && containerRef.current) {
       observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            loadCalendly();
+            setWidgetReady((ready) => {
+              if (!ready) loadCalendly();
+              return ready;
+            });
             if (observer) observer.disconnect();
           }
         });
-      }, { rootMargin: '200px 0px' });
+      }, { rootMargin: '1000px 0px' });
       observer.observe(containerRef.current);
-    } else {
-      loadCalendly();
     }
 
     return () => {
@@ -143,10 +148,17 @@ const MeetingBookingSection: React.FC = () => {
           </div>
           
           {/* Right Side - Calendly Widget */}
-          <div ref={containerRef} className="bg-white rounded-2xl p-6 shadow-2xl" style={{ minWidth: '320px', height: '700px' }}>
+           <div ref={containerRef} className="bg-white rounded-2xl p-6 shadow-2xl" style={{ minWidth: '320px', height: '700px' }}>
             {!widgetReady && (
               <div className="flex items-center justify-center h-full text-gray-600">
-                Loading scheduler…
+                <div className="loader" aria-label="Loading scheduler" role="status">
+                  <div className="loader__bar"></div>
+                  <div className="loader__bar"></div>
+                  <div className="loader__bar"></div>
+                  <div className="loader__bar"></div>
+                  <div className="loader__bar"></div>
+                  <div className="loader__ball"></div>
+                </div>
               </div>
             )}
           </div>

@@ -74,7 +74,7 @@ const HeroSection = () => {
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="https://t.me/SamanwayDeFi"
+            href="https://t.me/DegenLabsX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-white/15 bg-black/60 text-white px-6 sm:px-8 py-4 text-base sm:text-lg hover:bg-black/70 smooth-transition"

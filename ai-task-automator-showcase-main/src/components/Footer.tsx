@@ -26,7 +26,7 @@ const Footer = () => {
             We are just one message away from becoming Your Trusted Growth Partner.
           </p>
           <a
-            href="https://t.me/SamanwayDeFi"
+            href="https://t.me/DegenLabsX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur px-5 py-3 text-base text-white smooth-transition"
@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/60 text-sm">© 2024 Degen Labs. All rights reserved.</p>
           <a
-            href="https://t.me/SamanwayDeFi"
+            href="https://t.me/DegenLabsX"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 md:mt-0 inline-flex items-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur px-4 py-2 text-sm text-white smooth-transition"

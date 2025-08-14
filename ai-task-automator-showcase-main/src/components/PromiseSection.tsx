@@ -74,7 +74,7 @@ const PromiseSection = () => {
             Let's Get You Growing
           </h3>
           <a
-            href="https://t.me/SamanwayDeFi"
+            href="https://t.me/DegenLabsX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/30 backdrop-blur-md px-8 py-4 text-lg hover:bg-white/40 smooth-transition animate-fade-in-up"

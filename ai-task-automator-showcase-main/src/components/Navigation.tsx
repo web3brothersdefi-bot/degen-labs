@@ -42,7 +42,7 @@ const Navigation = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-3">
             <a
-              href="https://t.me/SamanwayDeFi"
+              href="https://t.me/DegenLabsX"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/10 text-white px-3 py-1.5 text-sm font-medium hover:bg-white/20 smooth-transition"
