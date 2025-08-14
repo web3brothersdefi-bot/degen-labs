@@ -25,6 +25,10 @@ export function FloatingCrypto(): JSX.Element {
           alt={icon.alt}
           className={`absolute select-none animate-float ${icon.className}`}
           style={{ animationDelay: `${icon.delaySec ?? 0}s` }}
+          loading="eager"
+          decoding="async"
+          width={80}
+          height={80}
           aria-hidden
         />
       ))}

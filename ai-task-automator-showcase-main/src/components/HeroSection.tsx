@@ -1,22 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FloatingCrypto } from "./FloatingCrypto";
 
 const HeroSection = () => {
-  const [particles, setParticles] = useState<Array<{id: number, left: number, size: number, delay: number}>>([]);
-
-  useEffect(() => {
-    // Fewer background particles for a cleaner look
-    const newParticles = Array.from({ length: 22 }, (_, i) => ({
+  const [particles] = useState<Array<{id: number, left: number, size: number, delay: number}>>(() =>
+    // Generate once so particles exist on first paint (no pop-in)
+    Array.from({ length: 16 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       size: Math.random() * 1.5 + 0.5,
-      delay: Math.random() * 20
-    }));
-    setParticles(newParticles);
-  }, []);
+      delay: Math.random() * 20,
+    }))
+  );
 
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 pt-24 md:pt-32 pb-16 md:pb-0">
