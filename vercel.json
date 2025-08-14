@@ -5,12 +5,12 @@
       "src": "ai-task-automator-showcase-main/ai-task-automator-showcase-main/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "ai-task-automator-showcase-main/ai-task-automator-showcase-main/dist"
       }
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
 
