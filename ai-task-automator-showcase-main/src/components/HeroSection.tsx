@@ -62,17 +62,20 @@ const HeroSection = () => {
           Degen Labs specializes in Web3 marketing, community growth, and development to drive real results for your project.
         </p>
 
-        {/* Trust indicator */}
-        <p className="text-muted-foreground mb-12 animate-slide-from-left" style={{ animationDelay: '0.8s' }}>
-          Trusted by OGs in the Web3 space
-        </p>
+        {/* Trust indicator removed per request */}
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-stretch sm:items-center animate-slide-from-left" style={{ animationDelay: '1s' }}>
-          <Button size="lg" className="w-full sm:w-auto bg-white text-black hover:bg-white/90 border border-white/30 rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg smooth-transition group">
+          <a
+            href="https://calendly.com/web3brothersdefi/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-white text-black hover:bg-white/90 border border-white/30 px-6 sm:px-8 py-4 text-base sm:text-lg smooth-transition group"
+            aria-label="Request a proposal"
+          >
             Request a proposal
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          </a>
           <a
             href="https://t.me/SamanwayDeFi"
             target="_blank"

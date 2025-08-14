@@ -36,7 +36,7 @@ const itemsBottom = [
     icon: DollarSign,
     title: "Unbeatable prices",
     desc:
-      "Thanks to our years of strong relationships and bulk buying power with KOLs, we provide the most unbeatable prices, that are hard to match without GrowRex.",
+      "Thanks to our years of strong relationships and bulk buying power with KOLs, we provide the most unbeatable prices, that are hard to match without Degen Labs.",
     gifSrc: "/why%20degen%20labs/money-bag.gif",
   },
   {
@@ -48,19 +48,19 @@ const itemsBottom = [
   },
 ];
 
-const WhyGrowRex = () => {
+const WhyDegenLabs = () => {
   return (
     <section className="py-24 px-4 corner-gradient-card">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <span className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-white/90">Why GrowRex</span>
+          <span className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-white/90">Why Degen Labs</span>
         </div>
 
         <h2 className="text-center text-white text-4xl md:text-6xl font-semibold leading-tight mb-6">
           Anyone can get you <span className="italic font-normal">influencers</span>,
         </h2>
         <p className="text-center text-white/85 text-lg md:text-xl max-w-4xl mx-auto">
-          We’re so much more than that! GrowRex is co-founded by growth-experts and leading KOLs
+          We’re so much more than that! Degen Labs is co-founded by growth-experts and leading KOLs
         </p>
 
         <div className="grid md:grid-cols-3 gap-10 mt-14">
@@ -99,6 +99,6 @@ const WhyGrowRex = () => {
   );
 };
 
-export default WhyGrowRex;
+export default WhyDegenLabs;
 
 

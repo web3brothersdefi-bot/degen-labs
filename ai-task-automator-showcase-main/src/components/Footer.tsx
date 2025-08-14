@@ -54,11 +54,11 @@ const Footer = () => {
           {/* Links */}
           <div className="lg:col-span-2">
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-white/70">
-              <a href="mailto:hi@degenlabs.xyz" className="hover:text-white">hi@degenlabs.xyz</a>
+              <a href="mailto:info@degenlabs.site" className="hover:text-white">info@degenlabs.site</a>
               <a href="#" className="hover:text-white">Privacy policy</a>
-              <a href="#" className="hover:text-white">Careers</a>
-              <a href="#" className="hover:text-white">LinkedIn</a>
-              <a href="#" className="hover:text-white">Twitter</a>
+				<a href="https://instagram.com/DegenLabsX" target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a>
+              <a href="https://www.linkedin.com/in/samanway-baranwal-a40886297/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Founder LinkedIn</a>
+				<a href="https://x.com/DegenLabsX" target="_blank" rel="noopener noreferrer" className="hover:text-white">Twitter</a>
             </div>
           </div>
         </div>

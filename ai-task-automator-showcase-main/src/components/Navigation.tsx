@@ -51,9 +51,37 @@ const Navigation = () => {
               <img src="/telegram.svg" alt="Telegram" className="w-4 h-4 mr-2" />
               Contact Us
             </a>
-            <Button className="h-10 px-4 text-sm bg-white text-black hover:bg-white/90">
-              Book a call
-            </Button>
+            <a
+              href="#"
+              onClick={async (e) => {
+                e.preventDefault();
+                const url = 'https://calendly.com/web3brothersdefi/30min';
+                const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]') as HTMLScriptElement | null;
+                const ensureScript = () => new Promise<void>((resolve) => {
+                  if (typeof (window as any).Calendly !== 'undefined') return resolve();
+                  if (existingScript) {
+                    existingScript.addEventListener('load', () => resolve(), { once: true });
+                    return;
+                  }
+                  const script = document.createElement('script');
+                  script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                  script.async = true;
+                  script.onload = () => resolve();
+                  document.body.appendChild(script);
+                });
+                try {
+                  await ensureScript();
+                  // Remove any persistent badge if it exists
+                  document.querySelectorAll('.calendly-badge-widget').forEach((el) => el.parentElement?.removeChild(el));
+                  (window as any).Calendly.initPopupWidget({ url });
+                } catch (err) {
+                  window.open(url, '_blank', 'noopener,noreferrer');
+                }
+              }}
+              className="inline-flex items-center justify-center h-10 px-4 text-sm bg-white text-black hover:bg-white/90 rounded-md font-medium"
+            >
+              Request Proposal
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

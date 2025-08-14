@@ -151,13 +151,15 @@ const ContactSection = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  variant="outline" 
-                  className="w-full hover:bg-muted/50 smooth-transition"
-                  size="lg"
+                <a
+                  href="https://calendly.com/web3brothersdefi/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-md border border-input bg-background hover:bg-muted/50 smooth-transition h-11 px-8 text-sm font-medium"
+                  aria-label="Schedule Consultation"
                 >
                   Schedule Consultation
-                </Button>
+                </a>
               </CardContent>
             </Card>
 
@@ -168,12 +170,15 @@ const ContactSection = () => {
                 <p className="text-muted-foreground mb-4">
                   Experience the power of AI automation with our 14-day free trial. No credit card required.
                 </p>
-                <Button 
-                  className="bg-gradient-primary hover:shadow-glow-primary smooth-transition"
-                  size="lg"
+                <a
+                  href="https://calendly.com/web3brothersdefi/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-gradient-primary hover:shadow-glow-primary smooth-transition h-11 px-8 text-sm font-medium"
+                  aria-label="Start Free Trial"
                 >
                   Start Free Trial
-                </Button>
+                </a>
               </CardContent>
             </Card>
           </div>

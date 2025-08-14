@@ -45,13 +45,13 @@ const cardsBottom: BenefitCard[] = [
 const Card = ({ title, desc, imageSrc }: BenefitCard) => (
   <div className="rounded-2xl border border-white/10 center-gradient-card p-6 md:p-8">
     {imageSrc && (
-      <div className="mb-4 w-full h-24 md:h-28 rounded-lg overflow-hidden">
+      <div className="mb-4 w-full h-20 sm:h-24 md:h-28 rounded-lg overflow-hidden flex items-center justify-center bg-black/20 p-2 md:p-3">
         <img
           src={imageSrc}
           alt={title}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="max-h-full w-auto object-contain"
           onError={(e) => {
             const el = e.currentTarget as HTMLImageElement;
             const triedSpace = el.dataset.triedSpace === 'true';
@@ -95,7 +95,7 @@ const OurBenefits = () => {
 
         <div className="grid lg:grid-cols-3 gap-5 md:gap-6 mt-5 md:mt-6">
           {cardsBottom.map((c) => (
-            <Card key={c.title} title={c.title} desc={c.desc} />
+            <Card key={c.title} title={c.title} desc={c.desc} imageSrc={c.imageSrc} />
           ))}
         </div>
       </div>

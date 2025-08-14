@@ -1,45 +1,31 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ResultsSection from "@/components/ResultsSection";
-import TaskCategoriesSection from "@/components/TaskCategoriesSection";
-import PartnersSection from "@/components/PartnersSection";
-import LogoMarquee from "@/components/LogoMarquee";
-// import ComparisonSection from "@/components/ComparisonSection";
-import BenefitsSection from "@/components/BenefitsSection";
-// import PromiseSection from "@/components/PromiseSection";
-import AdvantagesSection from "@/components/AdvantagesSection";
-import WhyGrowRex from "@/components/WhyGrowRex";
-import OurBenefits from "@/components/OurBenefits";
-import GuaranteeSection from "@/components/GuaranteeSection";
-import Footer from "@/components/Footer";
+import React from 'react';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import ResultsSection from '../components/ResultsSection';
+import TaskCategoriesSection from '../components/TaskCategoriesSection';
+import PartnersSection from '../components/PartnersSection';
+import BenefitsSection from '../components/BenefitsSection';
+import WhyDegenLabs from '../components/WhyGrowRex';
+import AdvantagesSection from '../components/AdvantagesSection';
+import OurBenefits from '../components/OurBenefits';
+import GuaranteeSection from '../components/GuaranteeSection';
+import MeetingBookingSection from '../components/MeetingBookingSection';
+import Footer from '../components/Footer';
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <section id="home">
-          <HeroSection />
-        </section>
-        <LogoMarquee />
-        <section id="about">
-          <AboutSection />
-        </section>
-        <section id="results">
-          <ResultsSection />
-        </section>
-        <section id="services">
-          <TaskCategoriesSection />
-        </section>
-        <PartnersSection />
-        {/* ComparisonSection removed per request */}
-        <BenefitsSection />
-        <WhyGrowRex />
-        <OurBenefits />
-        <GuaranteeSection />
-        <AdvantagesSection />
-      </main>
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <AboutSection />
+      <ResultsSection />
+      <TaskCategoriesSection />
+      <PartnersSection />
+      <BenefitsSection />
+      <WhyDegenLabs />
+      <AdvantagesSection />
+      <OurBenefits />
+      <GuaranteeSection />
+      <MeetingBookingSection />
       <Footer />
     </div>
   );

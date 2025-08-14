@@ -17,32 +17,55 @@ const ResultsSection = () => {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
-    let started = false;
+
+    const startedRef = { current: false } as { current: boolean };
+
+    const startCount = () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
+      const durationMs = 1600;
+      const start = performance.now();
+      const startVals = metrics.map(() => 0);
+      const raf = () => {
+        const t = (performance.now() - start) / durationMs;
+        const progress = Math.min(1, t);
+        setValues(
+          metrics.map((m, i) => Math.floor(startVals[i] + (m.target - startVals[i]) * progress))
+        );
+        if (progress < 1) requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+    };
+
     const obs = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        // start only when majority of section is visible to the user
-        if (entry.intersectionRatio >= 0.6 && !started) {
-          started = true;
-          obs.unobserve(el);
-          const durationMs = 1600;
-          const start = performance.now();
-          const startVals = metrics.map(() => 0);
-          const raf = () => {
-            const t = (performance.now() - start) / durationMs;
-            const progress = Math.min(1, t);
-            setValues(
-              metrics.map((m, i) => Math.floor(startVals[i] + (m.target - startVals[i]) * progress))
-            );
-            if (progress < 1) requestAnimationFrame(raf);
-          };
-          requestAnimationFrame(raf);
+        if (entry.isIntersecting || entry.intersectionRatio >= 0.15) {
+          startCount();
+          obs.disconnect();
         }
       },
-      { threshold: 0.6, rootMargin: "0px 0px -20% 0px" }
+      { threshold: [0, 0.1, 0.2, 0.3], rootMargin: "0px 0px -10% 0px" }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Fallback check after mount for mobile browsers
+    const fallback = window.setTimeout(() => {
+      if (startedRef.current) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const overlap = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+      const visibleRatio = overlap / Math.min(vh, rect.height || 1);
+      if (visibleRatio >= 0.2) {
+        startCount();
+        obs.disconnect();
+      }
+    }, 400);
+
+    return () => {
+      window.clearTimeout(fallback);
+      obs.disconnect();
+    };
   }, []);
 
   const outcomes = [
