@@ -4,9 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-// For GitHub Pages, we can pass base via CLI in CI, but set a sensible default
+// Use root base by default; for GitHub Pages builds, set GITHUB_PAGES=true to use the repo subpath
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/degen-labs/' : '/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/degen-labs/' : '/',
   server: {
     host: "::",
     port: 8080,

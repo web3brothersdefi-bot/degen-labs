@@ -31,9 +31,11 @@ jobs:
         working-directory: ai-task-automator-showcase-main/ai-task-automator-showcase-main
         run: npm ci
 
-      - name: Build (GitHub Pages base path)
+      - name: Build (GitHub Pages)
         working-directory: ai-task-automator-showcase-main/ai-task-automator-showcase-main
-        run: npm run build -- --base=/degen-labs/
+        env:
+          GITHUB_PAGES: "true"
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
